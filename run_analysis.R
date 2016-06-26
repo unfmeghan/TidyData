@@ -11,6 +11,15 @@ if(!file.exists("./data"))
     unzip(zipfile="./data/Dataset.zip",exdir="./data")
     }
 
-path_rf <- "./data/UCI HAR Dataset"
-files <- list.files(path_rf, recursive=TRUE)
-files
+datapath <- "./data/UCI HAR Dataset"
+files <- list.files(datapath, recursive=TRUE)
+
+#Read Test files
+dataActivityTest  <- read.table(paste(datapath, "/test/Y_test.txt", sep="" ),header = FALSE)
+dataSubjectTest  <- read.table(paste(datapath, "/test/subject_test.txt", sep=""),header = FALSE)
+dataFeaturesTest  <- read.table(paste(datapath, "/test/X_test.txt", sep=""),header = FALSE)
+
+#Read Train files
+dataActivityTrain <- read.table(paste(datapath, "/train/Y_train.txt", sep=""),header = FALSE)
+dataSubjectTrain <- read.table(paste(datapath, "/train/subject_train.txt", sep=""),header = FALSE)
+dataFeaturesTrain <- read.table(paste(datapath, "/train/X_train.txt", sep=""),header = FALSE)
