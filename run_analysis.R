@@ -12,7 +12,6 @@ if(!file.exists("./data"))
     unzip(zipfile="./data/Dataset.zip",exdir="./data")
     }
 setwd("~/GitHub/TidyData/data/UCI HAR Dataset")
-files <- list.files(".", recursive=TRUE)
 
 ##Step 1: Read and Merges the training and the test sets to create one data set.
 #Read Test files
